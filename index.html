@@ -1,9 +1,12 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Superheroes</title>
+
+  <title>Heroes</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +15,7 @@
   <h1>Superheroes</h1>
 
   <!-- SEARCH -->
-  <input type="text" id="search" placeholder="Search hero...">
+  <input type="text" id="search" placeholder="Search hero">
 
   <!-- PAGE SIZE -->
   <select id="pageSize">
@@ -24,34 +27,50 @@
   </select>
 
   <!-- TABLE -->
-  <table>
-    <thead>
-      <tr>
-        <th data-column="image">Image</th>
-        <th data-column="name">Name</th>
-        <th data-column="fullName">Full Name</th>
-        <th data-column="intelligence">Intelligence</th>
-        <th data-column="strength">Strength</th>
-        <th data-column="speed">Speed</th>
-        <th data-column="race">Race</th>
-        <th data-column="gender">Gender</th>
-        <th data-column="height">Height</th>
-        <th data-column="weight">Weight</th>
-        <th data-column="place">Place Of Birth</th>
-        <th data-column="alignment">Alignment</th>
-      </tr>
-    </thead>
+  <div class="table-container">
 
-    <tbody id="tableBody"></tbody>
-  </table>
+    <table>
 
-  <!-- PAGINATION -->
-  <div id="pagination">
-    <button id="prev">Prev</button>
-    <span id="pageNumber">1</span>
-    <button id="next">Next</button>
+      <thead>
+        <tr>
+            <th>Image</th>
+          <th data-sort="name">Name</th>
+          <th data-sort="fullName">Full Name</th>
+          <th data-sort="intelligence">Intelligence</th>
+          <th data-sort="strength">Strength</th>
+          <th data-sort="speed">Speed</th>
+          <th data-sort="race">Race</th>
+          <th data-sort="gender">Gender</th>
+          <th data-sort="height">Height</th>
+          <th data-sort="weight">Weight</th>
+          <th data-sort="place">Place</th>
+          <th data-sort="alignment">Alignment</th>
+        </tr>
+      </thead>
+
+      <tbody id="tbody"></tbody>
+
+    </table>
+
   </div>
 
+  <!-- PAGINATION -->
+  <div class="pagination">
+
+    <button id="prev">Prev</button>
+
+    <span id="page">1</span>
+
+    <button id="next">Next</button>
+
+   </div>
+
+  <script src="data.js"></script>
+  <script src="display.js"></script>
+  <script src="search.js"></script>
+  <script src="pagination.js"></script>
+  <script src="sort.js"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
