@@ -88,10 +88,9 @@ function getValue(hero, column) {
 // NUMBER
 function getNumber(value) {
   if (!value) return null;
-
   let parts = value.split(" ");
+  parts[0] = parts[0].replace(/,/g, "");
   let number = parseFloat(parts[0]);
-
   if (isNaN(number)) return null;
 
   let unit = parts[1];
