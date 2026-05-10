@@ -87,9 +87,18 @@ function getValue(hero, column) {
 
 // NUMBER
 function getNumber(value) {
-  var number = parseInt(value);
-  if (isNaN(number)) {
-    return null;
-  }
+  if (!value) return null;
+
+  let parts = value.split(" ");
+  let number = parseFloat(parts[0]);
+
+  if (isNaN(number)) return null;
+
+  let unit = parts[1];
+
+  if (unit === "meters") return number * 100;
+  if (unit === "cm") return number;
+  if (unit === "tons") return number * 1000;
+
   return number;
 }
